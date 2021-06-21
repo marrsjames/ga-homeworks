@@ -1,0 +1,38 @@
+.firstpage {
+  background-image: url('images/hero.jpg');
+  background-size: 100% 100%;
+}
+.firstpage li {
+  display: inline;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none; 
+  padding-right: 20px;
+}
+.textpage {
+  background-color:white;
+  color: teal;
+  text-align: center;
+  font-family: arial;
+}
+.textpage li{
+  text-transform: uppercase;
+  display: inline;
+  list-style-position:inside;
+  border: 1px solid black;
+  border-style: dotted;
+  text-decoration: none; 
+}
+.textpage h1 {
+  text-transform: uppercase;
+}
+.address {
+  font-weight: bold;
+}
+.newsletter {
+  height: 200px;
+  background-color:teal;
+  color: white;
+  text-align: center;
+  font-family: arial;
+}
