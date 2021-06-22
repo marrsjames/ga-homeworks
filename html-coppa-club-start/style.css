@@ -1,3 +1,9 @@
+a{
+  text-decoration: none;
+}
+.firstpage a {
+  color: white;
+}
 .firstpage {
   background-image: url('images/hero.jpg');
   background-size: 100% 100%;
@@ -30,9 +36,62 @@
   font-weight: bold;
 }
 .newsletter {
-  height: 200px;
+  height: 500px;
   background-color:teal;
   color: white;
   text-align: center;
   font-family: arial;
 }
+.bookingform {
+  text-align: center;
+  border: 2px solid black;
+  }
+.forminput {
+  display: block;
+}
+.locationpage {
+  display: inline;
+}
+.locationimage {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+.newsletter a {
+  text-decoration: none;
+  color: white;
+}
+.textpage a {
+  color: teal;
+}
+.newsletter a{
+  color: white;
+}
+.location {
+  float: right;
+  width: 50%;
+}
+.threeimages {
+  width: 100%;
+  display: inline-block;
+}
+.oneofthreeimages {
+  width: 32%;
+  float: center;
+  margin: 5px;
+}
+.footer{
+  width: 100%;
+}
+.left {
+  float: left;
+  width:33.33333%;
+}
+.centre {
+  float: center;
+  width:33.33333%;
+}
+.right {
+ float: right;
+ width:33.33333%;
+}​
