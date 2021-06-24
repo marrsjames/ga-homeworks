@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    background-image: linear-gradient(30deg, rgb(221, 120, 196) 0, #aa31da 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    min-height: 100vh;
+    font-family: "Segoe UI", Calibri, Helvetica;
+  }
+  
+  body {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+ul.movies-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.movie {
+  padding: 5px;
+  border-radius: 5px;
+  background: rgba(71, 195, 211, 0.8);
+  flex-basis: 5%;
+  flex-grow: 1;
+  flex-shrink: 0;
+  text-align: center;
+}
