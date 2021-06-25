@@ -1,0 +1,125 @@
+/*
+google font: Nunito
+
+brand red: #ff5358
+dark red: #e00007
+background grey: #efefef
+title grey: #edefed
+footer grey: #2B2D2E
+*/
+body {
+	font-family: 'Nunito', sans-serif;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    min-height: 50px;
+    align-items: center;
+    
+}
+.header-links > a {
+    text-decoration: none;
+    color: black;
+}
+.header-logo {
+    height: 40px;
+}
+
+.main-area {
+    display: flex;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('../images/melbourne.jpg');
+    background-size: cover;
+    min-height: 700px;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+}
+.main-text > h1,p {
+    color: #edefed;
+}
+.main-text > h1 {
+    font-size: 50px;
+}
+button {
+    background-color: #ff5358;
+    color: #edefed;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+}
+.locals-section {
+    display: flex;
+    background-color: #efefef;
+    height:180px;
+    align-items: center;
+}
+.locals-text >p {
+    color: black;
+}
+.locals-text-wrapper{
+    border: 1px solid black;  
+
+}
+.locals-text {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.neighbourhoods-header > p {
+color: black;
+}
+.neighbourhoods-header {
+    text-align: center;
+}
+.neighbourhoods {
+    display: flex;
+    justify-content: space-around;
+    
+}
+.neighbourhood-tile{
+    width: 30%;
+    background-color: #efefef;
+    diplay: flex;
+    direction: row;
+}
+.neighbourhood-tile > p{
+color: black;
+
+}
+.location {
+    padding-top: 50px;    
+text-align: center;
+    color: #edefed;
+    align-items: center;
+
+}
+.fitzroy-tile-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('../images/fitzroy.jpg');   
+    background-size: cover;
+    height: 210px;
+}
+.st-kilda-tile-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('../images/st-kilda.jpg');   
+    background-size: cover;
+    height: 210px;
+}
+.central-tile-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('../images/central-business-district.jpg');   
+    background-size: cover;
+    height: 210px;
+
+}
+.footer-button{
+    padding: 30px 30px;
+    text-align: center;
+}
+footer {
+    background-color: #2B2D2E;
+    text-align: center;
+    min-height: 200px ;
+}
+footer > p {
+    background-color: #2B2D2E;
+    padding-top: 30px;
+}
