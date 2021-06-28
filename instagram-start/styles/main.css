@@ -1,0 +1,100 @@
+/*background color = #fafafa*/
+/*button blue = #3897f0*/
+/*border color = #e6e6e6*/
+/*footer link color = #003569*/
+/*text grey color = #999*/
+
+body, input {
+  font-family: 'Karla', sans-serif;
+}
+main {
+  display: flex;
+  justify-content: center;
+  padding: 50px 10px; 
+  background-color: #fafafa;
+}
+p {
+  color: #999;
+  font-size: 0.8em;
+}
+.phones {
+  padding-right: 10px;
+  width: 30%;
+}
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 10px;
+  width: 30%;
+  height: auto;
+}
+.sign-up-form {
+  text-align: center;
+  background-color: white;
+  height: 80%;
+
+}
+.sign-up-form > img {
+ margin-top: 20px;
+}
+input {
+  border-color: #e6e6e6;
+}
+.form-group {
+  margin-bottom: 10px;
+}
+input {
+  width: 250px;
+  height: 30px;
+
+}
+button {
+  background-color: #3897f0;
+  color: white;
+  font-family: 'Karla', sans-serif;
+  border-style: none;
+  height: 30px;
+  width: 250px;
+}
+.log-in {
+  margin-top: 10px;
+  background-color: white;
+  height: auto;
+  padding: 20px 20px;
+  text-align: center ;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-logos {
+  display: flex;
+  justify-content: center;
+}
+.app > p {
+  color: black;
+}
+.log-in > p {
+  color: black;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 875px) {
+
+  section:first-of-type {
+    display: none;
+  }
+
+  section:last-of-type {
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 10px;
+    justify-content: center;
+  }
+
+}
