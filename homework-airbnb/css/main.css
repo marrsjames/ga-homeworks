@@ -54,6 +54,7 @@ button {
     height:180px;
     align-items: center;
 }
+ /* remove this part */
 .locals-text >p {
     color: black;
 }

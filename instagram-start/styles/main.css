@@ -74,12 +74,11 @@ button {
   display: flex;
   justify-content: center;
 }
-.app > p {
+
+.app > p, .log-in > p {
   color: black;
 }
-.log-in > p {
-  color: black;
-}
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -95,6 +94,7 @@ footer {
     max-width: 100%;
     padding: 0 10px;
     justify-content: center;
+    align-items: center;
   }
 
 }
