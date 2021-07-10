@@ -68,6 +68,7 @@ function fibonacci(n) {
     let fibn = fibArray[i-1] + fibArray[i-2]
     fibArray[i] = fibn
   }
+  return fibArray
   console.log(fibArray)
 }
 
