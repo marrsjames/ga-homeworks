@@ -68,11 +68,16 @@ function fibonacci(n) {
     let fibn = fibArray[i-1] + fibArray[i-2]
     fibArray[i] = fibn
   }
-  return fibArray
-  console.log(fibArray)
+
+
+  const fibArrayLimited =  fibArray.slice(0, n)
+  console.log(fibArrayLimited)
+  return fibArrayLimited
+
+
 }
 
-fibonacci(4)
+fibonacci(10)
 
 module.exports = {
   removeBlank,
