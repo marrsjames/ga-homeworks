@@ -7,14 +7,16 @@
   pointer-events: none;
 }
 
-
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
 
 .App-header {
   background-color: #282c34;
@@ -22,7 +24,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -48,18 +49,28 @@ main {
 }
 
 .App-header nav ul {
+  width: 100%;
   display: flex;
+  justify-content: space-around;
 }
 
 .App-header nav ul li {
   list-style: none;
   text-decoration: none;
-  font-size: 50px;
   margin-right: 20px;
 }
 .App-header nav ul li a {
   list-style: none;
   text-decoration: none;
   color: white;
-  font-size: 50px;
+  font-size: 40px;
+}
+
+button {
+  font-size: 1.25em;
+  color: white;
+  margin-top: 10px;
+  background-color: #282c34;
+  min-height: 40px;
+  min-width: 100px;
 }

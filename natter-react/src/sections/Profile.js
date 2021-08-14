@@ -1,4 +1,7 @@
 import React from 'react'
+import {
+  Link,
+} from "react-router-dom";
 import ProfileHeader from '../components/ProfileHeader'
 
 const users = {
@@ -27,6 +30,11 @@ const Profile = ({ username }) => {
     <section className="profile">
       <h2>Profile</h2>
       <ProfileHeader {...user}></ProfileHeader>
+      <Link to="/Nats">
+      <button type="button">
+          Back to Nats!
+     </button>
+      </Link>
     </section>
   )
 }
