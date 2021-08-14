@@ -1,0 +1,35 @@
+Hi James! Awesome Insta homework - just took a look and it looks really good so nice effort :sunglasses: Again you’ve used flex box really well and all the elements are in the right place so that’s great :100:
+Also nice one that you managed to do the mobile version - looks good - maybe just add an align-items: center so that it sits in the centre of the page:
+  section:last-of-type {
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 10px;
+    justify-content: center;
+    align-items: center;
+  }
+Apart from that your code looks great and a great finish exericse to the CSS & HTML content . Let me know if you had any specific questions for this one as I don’t have much feedback for your code. Keep up the good work :slightly_smiling_face:
+white_check_mark
+eyes
+raised_hands
+
+
+
+
+
+
+James Marrs  9:07 PM
+thanks very much, Elsie! i did have one question  actually... is there a way to tidy up and combine the below into just one rule?
+9:07
+.app > h3 {
+  color: black;
+}
+.log-in > h3 {
+  color: black;
+}
+
+Elsie Down  9:12 PM
+You could do:
+.app > h3, .log-in > h3 {
+  color: black;
+}
+So you just separate the selector by a comma

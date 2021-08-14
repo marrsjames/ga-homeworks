@@ -1,13 +1,13 @@
 /* eslint-disable no-undef */
 const fns = require('./problems')
 
-describe('This is our demo test function, return an empty array to pass', () => {
+xdescribe('This is our demo test function, return an empty array to pass', () => {
   test('should return an empty array', () => {
     expect(fns.demo([])).toEqual([])
   })
 })
 
-describe('stringsOnly', () => {
+xdescribe('stringsOnly', () => {
   test('should return only the strings of an array', () => {
     expect(fns.stringsOnly([10, 'Mike', '23', NaN, 'elephant'])).toEqual(['Mike', '23', 'elephant'])
     expect(fns.stringsOnly([{}, [], 99, false])).toEqual([])
@@ -15,7 +15,7 @@ describe('stringsOnly', () => {
   })
 })
 
-describe('convertTemps', () => {
+xdescribe('convertTemps', () => {
   test('should convert farenheit to celcius for all temperatures in the array', () => {
     expect(fns.convertTemps([23, 140, 212, 41])).toEqual([-5, 60, 100, 5])
     expect(fns.convertTemps([-58, -22, -4, 14])).toEqual([-50, -30, -20, -10])
@@ -23,7 +23,7 @@ describe('convertTemps', () => {
   })
 })
 
-describe('characterCount', () => {
+xdescribe('characterCount', () => {
   test('should sum the total number of characters per item in the array', () => {
     expect(fns.characterCount(['Stay', 'hungry', 'stay', 'foolish'])).toEqual([4, 6, 4, 7])
     expect(fns.characterCount(['Where', 'is', 'the', 'stone'])).toEqual([5, 2, 3, 5])
@@ -62,7 +62,7 @@ xdescribe('numberOfVowels', () => {
   })
 })
 
-xdescribe('titleCase', () => {
+describe('titleCase', () => {
   test('should capitalise the first letter of each word', () => {
     expect(fns.titleCase('The lord of the rings')).toEqual('The Lord Of The Rings')
     expect(fns.titleCase('The red hot chili peppers')).toEqual('The Red Hot Chili Peppers')

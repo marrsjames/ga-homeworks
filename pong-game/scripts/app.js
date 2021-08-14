@@ -19,13 +19,13 @@ playerCurrent.textContent = playerScore;
 computerCurrent.textContent = computerScore;
 
 function onkeydown(e) {
-  if (e.keyCode == 39) {
+  if (e.keyCode === 39) {
     if (bottomPaddleX + 10 <=400 - bottomPaddleWidth){
        console.log(bottomPaddleX);
       bottomPaddleX = bottomPaddleX + 10;
     }
   }
-  else if (e.keyCode == 37) {
+  else if (e.keyCode === 37) {
     if (bottomPaddleX - 10 >=0){
     bottomPaddleX = bottomPaddleX - 10;
     }

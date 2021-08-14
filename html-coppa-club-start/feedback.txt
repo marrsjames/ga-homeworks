@@ -1,0 +1,7 @@
+The main-text class font colour appears to be taking precedence because  if you want to write a css value for two properties (in this case the h1 and the p of the main-text class) you need to write the class name twice ie:
+.main-text h1, .main-text p {
+    color: #edefed;
+}
+If you don’t write the .main-text infront of the p, it will think you are just referencing all p tags in the code and hence why the colour was changing for the other p tags on your page.
+Margin and padding is a tricky one to get your head around. I think of margin as the space between elements (eg. To separate boxes from each other) and padding is the space within an element. Margin is sort of the space pushing away from the element whereas padding is the space pushing inside the element.
+I found this link quite useful: [When to use margin vs padding in CSS - Stack Overflow](https://stackoverflow.com/questions/2189452/when-to-use-margin-vs-padding-in-css#:~:text=The%20margin%20clears%20an%20area,vs%20margin%20if%20you%20can.)

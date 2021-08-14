@@ -1,0 +1,20 @@
+Hey James. Really nice effort on the hw again - good to see you trying out all the different exercises and to see that you’ve understood the map and filter methods really well :slightly_smiling_face:
+Wooo for solving the suspect exercise - your solution is great.
+Just a few comments on your code:
+Filter-map-problems.js:
+Well done for all the green ticks - so satisfying to see them on the screen :raised_hands:
+For your convertTemps function - make sure you’re stating what kind of variable it is so const Celsius - or you could call it celciusArray or something but make sure you have the keyword const / let before declaring the name like so:
+function convertTemps(array) {
+  const celcius = array.map((element) => ((element-32)*(5/9)))
+  return celcius
+}
+In your characterCount function - be careful not to call your new array ‘characterCount’ as that’s the name of the function and will confuse your code. You could call it something new like const newArray or even just return it directly like so:
+function characterCount(array) {
+  const newArray = array.map((element) => element.length)
+  return newArray
+}
+OR
+function characterCount(array) {
+  return array.map((element) => element.length)
+}
+Awesome to see you splitting up the different parts of the problem to solve it so keep going with that - helps a lot when trying to figure it out :slightly_smiling_face:   If you have time to go over the more-array-problems then have a go this week and let me know if you’d like me to look over any of your solutions. As always let me know if you have any other questions or would like me to go over / explain anything. Really nice effort though!!! :sunglasses:

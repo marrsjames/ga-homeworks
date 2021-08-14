@@ -1,0 +1,47 @@
+Evening James, hope all is well! I'm just messaging to give you some :star:Homework Feedback:star:
+Nice job attempting these questions, some of them are really tough and I struggled with them when I had to do them!
+For the removeBlank function, you’re definitely on the right track, and it can be done as follows:
+function removeBlank(array) {
+  return array.filter((value) => {
+    return value === 0 || !!value
+  })
+}
+This solution filters through each item in the array, and says if the value is = 0 OR if the value is true (the !! equates to saying ‘not not’) then return it.
+Your randomElement function works which is great, so well done there! Generating a random number in this way is fairly common so it's good that you’ve got it nailed down. Here is my completed code:
+function randomElement(array) {
+  return array[Math.floor(Math.random() * array.length)]
+}
+Nice job on the second lowest / highest function, this passes the test which is great! Keep an eye out on your indentation, and the only other thing I would note is make sure you have spaces either side of the - in [array.length - 2], here’s the completed and refactored version:
+function secondLowestSecondHighest(array) {
+  const orderedArray = array.sort((a,b) => {
+    return a - b
+  })
+  return [orderedArray[1], orderedArray[array.length - 2]]
+}
+The coin function is a tough one, I struggled for ages when I had to do it, so don’t worry about not giving this one a crack! The completed code is as follows:
+function coins(price) {
+  let pence = price * 100
+  const coins = [100, 50, 20, 10, 5, 2, 1]
+  const result = []
+  coins.forEach((coin) => {
+    while (pence - coin >= 0) {
+      pence -= coin
+      result.push(coin)
+    }
+  })
+  return result
+}
+The merge function is fairly simple and can be done using concatenation as below:
+function mergeUnique(arr1, arr2) {
+  return Array.from(new Set(arr1.concat(arr2)))
+}
+Have a look through these examples to see if you understand how they are working, and be sure to google anything you’re not sure on!
+Your fibonacci function works! Great stuff. Be sure to define all variables (const fibArray = []). Here is some completed code:
+function fibonacci(n) {
+  const fib = [0]
+  for (let I = 1; I < n; I++){
+    fib.push(fib[I - 2] + fib[I - 1] || 1)
+  }
+  return fib
+}
+Overall a great effort here, you’re clearly picking up on what’s being taught which is great to see, keep it up! If you have any questions let me know!

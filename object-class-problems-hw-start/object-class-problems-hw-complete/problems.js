@@ -8,12 +8,10 @@ storage (number)
 */
 
 const laptop = {
-  make: 'dell',
-  model: 'E54',
+  make: 'Apple Mac',
+  model: 'MacBook Air',
   ram: 8,
-  storage: 200
-
-
+  storage: 500,
 }
 
 /*
@@ -33,29 +31,19 @@ refill(amount) - adds the `amount` to the amountRemaining
 */
 
 const wineBottle = {
-  name: 'jameswine',
-  grape: 'merlot',
-  vintage: 1920,
-  volume: 500,
-  amountRemaining: 500,
+  name: 'Jam Shed',
+  grape: 'Shiraz',
+  vintage: 2019,
+  volume: 750,
+  amountRemaining: 750,
   drink(amount) {
     this.amountRemaining -= amount
-    this.logDrink(amount)
   },
-  refill(amount){
+  refill(amount) {
     this.amountRemaining += amount
-    this.logRefill(amount)
   },
-  logDrink(amount) {
-    console.log(`You just drank ${amount} so now there is ${this.amountRemaining} left of the ${this.name}`)
-  },
-  logRefill(amount) {
-    console.log(`You just refilled ${amount} so now there is ${this.amountRemaining} left of the ${this.name}`)
-  }
-
 }
-//wineBottle.drink(50)
-//wineBottle.refill(80)
+
 /*
 write a Product class that has the following properties:
 
@@ -65,19 +53,12 @@ price (number)
 */
 
 class Product {
-  constructor(name, description, price){
+  constructor(name, description, price) {
     this.name = name
     this.description = description
     this.price = price
   }
-  sell() {
-    console.log(`The ${this.name} has been sold for £${this.price}`)
-  }
 }
-
-const bike = new Product('Bike', 'Red raleigh bike', '99.99')
-
-bike.sell()
 
 /*
 Write a Cart class that has the following properties:
@@ -92,18 +73,17 @@ empty() - removes all items from the contents array
 getTotal() - returns the total price of all items in the contents array
 */
 
- class Cart {
-  constructor(contents){
+class Cart {
+  constructor() {
     this.contents = []
-    this.price = []
   }
 
-  addItem(item){
+  addItem(item) {
     this.contents.push(item)
   }
 
-  removeItem(itemToRemove) {
-    this.contents = this.contents.filter(item => item !== itemToRemove)
+  removeItem(item) {
+    this.contents = this.contents.filter((content) => content !== item)
   }
 
   empty() {
@@ -111,18 +91,9 @@ getTotal() - returns the total price of all items in the contents array
   }
 
   getTotal() {
-    return this.contents.reduce(
-      (a, b) => a + b, // what to do with each iterm in the array generalised version is 
-    //(accumulator, currentIterm) => accumulator + currentItem.price
-      0 //acccumulator starts with     
-      )
+    return this.contents.reduce((total, item) => total + item.price, 0)
   }
-
- }
-
-// const sausages = new
-
-// addItem('sausages')
+}
 
 /*
 Write a Shape class that has the following properties:
@@ -136,29 +107,54 @@ getArea() - calculates the area of the shape
 getPerimeter() - calculates the total length of all sides of the shape
 */
 
-//assuming it's a 4 sided shape?
-
 class Shape {
   constructor(width, height) {
     this.width = width
     this.height = height
   }
+
   getArea() {
-    const area = this.width * this.height
-    console.log(`The area is ${area}`)
+    return this.width * this.height
   }
 
   getPerimeter() {
-    const perimeter = (2 * this.width) + (2 * this.height)
-    console.log(`The perimeter is ${perimeter}`)
+    return 2 * this.width + 2 * this.height
   }
-
 }
 
-const shape1 = new Shape(4, 5)
-shape1.getArea()
-shape1.getPerimeter()
+/*
+Write a Square class that extends the Shape class above. It should have the same properties and methods as the Shape class, but only take a width when being instantiated. The height should be automatically set to be equal to the width.
+*/
 
+class Square extends Shape {
+  constructor(width) {
+    super(width, width)
+  }
+}
+
+/*
+Write a Tringle class that extends the Shape class above. It should have the following properties:
+
+width (number)
+height (number)
+
+and the following methods:
+
+getArea() - calculates the area of the triangle
+getPerimeter() - calculates the perimeter of the triangle (assuming it's right-angled, so width + height + √width + √height)
+*/
+
+class Triangle extends Shape {
+  getArea() {
+    return this.width * (this.height / 2)
+  }
+
+  getPerimeter() {
+    return (
+      this.width + this.height + Math.sqrt(this.width) + Math.sqrt(this.height)
+    )
+  }
+}
 
 // ! please do not alter below ✋
 
@@ -167,5 +163,7 @@ module.exports = {
   wineBottle,
   Product,
   Cart,
-  Shape
+  Shape,
+  Square,
+  Triangle,
 }

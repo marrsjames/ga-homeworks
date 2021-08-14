@@ -11,7 +11,7 @@ xdescribe('removeBlank', () => {
   })
 })
 
-describe('randomElement', () => {
+xdescribe('randomElement', () => {
   test('should return a random element from an array', () => {
     expect(fns.randomElement(['red', 'green', 'blue'])).toBeOneOf(['red', 'green', 'blue'])
   })
@@ -43,7 +43,7 @@ xdescribe('mergeUnique', () => {
   })
 })
 
-xdescribe('fibonacci', () => {
+describe('fibonacci', () => {
   test('should return the first n fibonacci numbers', () => {
     expect(fns.fibonacci(8)).toEqual([0, 1, 1, 2, 3, 5, 8, 13])
     expect(fns.fibonacci(1)).toEqual([0])

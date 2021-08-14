@@ -1,0 +1,33 @@
+Hey James! Awesome effort on the homework - looks wicked so really well done :raised_hands: I love the colour changes for the results
+Your code looks great and it’s clear that you’ve understood how to interact with the DOM so i'm happy to see it all working!
+In terms of your code - just a few suggestions…
+Completely up to you how you separate your code but I tend to separate the variables / elements / functions and then put all the eventListeners at the bottom of the page. Just means that all the different bits are grouped together:
+// Elements
+// Variables
+// Functions
+// Event Listeners
+Then you could make your code a lil more concise on your result function. I would maybe do something like so:
+  function result() {
+    const playerResult = playerCurrent.textContent
+    const computerResult = computerCurrent.textContent
+    if (playerResult === computerResult) {
+      console.log('draw')
+      gameResult.textContent = "It's a draw!"
+      background.classList = ""
+      background.classList.add('draw')
+    } else if ((computerResult === 'Paper' && playerResult === 'Rock') || (computerResult === 'Rock' && playerResult === 'Scissors') || (computerResult === 'Scissors' && playerResult === 'Paper')){
+      console.log('computer wins')
+      gameResult.textContent = "The computer wins!"
+      background.classList = ""
+      background.classList.add('player-lose')
+    } else {
+      console.log('player wins')
+      gameResult.textContent = "The player wins!"
+      background.classList = ""
+      background.classList.add('player-win')
+    }
+  }
+Basically what I’ve done here is you’ve essentially got three parts to your if / else statements - you’ve got the first bit (if its a tie) - then you’ve got all the conditions that would mean the computer has won (separated by the OR operator - || ) and then you’ve got our last ‘else’ - which is basically all other options (in this case basically anything that is NOT a tie or NOT the computer winning which means the player wins).
+This just means you don’t have to write out all the different conditions and helps you cut back on code which is always what we want.
+Apart from that  your code is great and its awesome to see you logging your work as you go. Really nice effort !
+Let me know if any of that doesn’t make sense or if you would like me to go over anything else! Really cool work :sunglasses:
