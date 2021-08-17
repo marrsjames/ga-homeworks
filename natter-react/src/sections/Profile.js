@@ -1,19 +1,21 @@
-import React from 'react'
-import {
-  Link,
-} from "react-router-dom";
-import ProfileHeader from '../components/ProfileHeader'
+import React from "react";
+import { Link } from "react-router-dom";
+import ProfileHeader from "../components/ProfileHeader";
 
 const users = {
   robin: {
-    username: 'robin',
-    displayName: 'Robin James Kerrison',
+    username: "robin",
+    displayName: "Robin James Kerrison",
   },
   tristan: {
-    username: 'tristan',
-    displayName: 'Tristan Hall',
+    username: "tristan",
+    displayName: "Tristan Hall",
   },
-}
+  james: {
+    username: "james",
+    displayName: "james",
+  },
+};
 
 const Profile = ({ username }) => {
   if (!username) {
@@ -22,21 +24,19 @@ const Profile = ({ username }) => {
         <h2>Profile</h2>
         <p>No user selected</p>
       </section>
-    )
+    );
   }
-  const user = users[username]
+  const user = users[username];
 
   return (
     <section className="profile">
       <h2>Profile</h2>
       <ProfileHeader {...user}></ProfileHeader>
       <Link to="/Nats">
-      <button type="button">
-          Back to Nats!
-     </button>
+        <button type="button">Back to Nats!</button>
       </Link>
     </section>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;
