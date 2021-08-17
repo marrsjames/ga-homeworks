@@ -7,13 +7,11 @@ import {
   Switch,
   Route,
   Link,
+  useParams,
 } from "react-router-dom";
 import "./App.css";
 
 function App() {
-  const [selectedUser, setSelectedUser] = useState("");
- 
-
   return (
     <div className="App">
       <Router>
@@ -26,7 +24,7 @@ function App() {
               </li>
               <li>
                 <Link to="/Nats">Nats</Link>
-              </li>            
+              </li>
             </ul>
           </nav>
         </header>
@@ -37,11 +35,11 @@ function App() {
                 <Buzzwords />
               </Route>
               <Route path="/Nats">
-                <Nats handleUserClick={setSelectedUser} />
+                <Nats />
               </Route>
-              <Route path="/Profile">
-                <Profile username={selectedUser} />
-              </Route>      
+              <Route path="/profile/:username">
+                <RoutedProfile />
+              </Route>
             </Switch>
           </main>
         </div>
@@ -49,5 +47,11 @@ function App() {
     </div>
   );
 }
+
+const RoutedProfile = () => {
+  const { username } = useParams();
+
+  return <Profile username={username} />;
+};
 
 export default App;

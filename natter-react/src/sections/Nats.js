@@ -7,9 +7,9 @@ const nats = [
   { author: "james", text: "yooooooo" },
 ];
 
-const Nats = ({ handleUserClick }) => {
+const Nats = () => {
   const natComponents = nats.map((cardProps, i) => (
-    <Nat key={i} handleUserClick={handleUserClick} {...cardProps} />
+    <Nat key={i} {...cardProps} />
   ));
 
   return (
