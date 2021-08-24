@@ -1,0 +1,26 @@
+DAY 1 WORK
+- create 'components' folder in src dir
+- within components new dirs common and wines (or whatever)
+- add Home.js file in common
+- import Home to App
+- browser router etc to App. (install if needed. Yarn add 'react-router-dom')
+- create NavBar in common
+- install bulma (yarn add bulma)
+- import NavBar to App. make sure it's inside browserrouter but outside the switch so it appears on every page
+- make homepage content
+- add bulma import in main.scss file. / make folder if needed. link scss filein index.js if needed
+- tidy up navbar
+
+- make WineIndex file in 'wines' dir
+
+- new dir 'lib' in src dir
+- api.js in lib folder. 'create eveything that handles all api calls'
+- add axious 'yarn add axios'   
+- add stuff in api.js 
+
+- make fetchwines function in WinesIndex
+- further stuff in winesindex
+- import WineIndex to App
+- why is wine (wine ) in lines 24/26 causing issues now?
+- create WineCard in wines dir
+- import winecard to wineindex. make WineCard
