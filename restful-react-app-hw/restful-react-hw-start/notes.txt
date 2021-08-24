@@ -24,3 +24,11 @@ DAY 1 WORK
 - why is wine (wine ) in lines 24/26 causing issues now?
 - create WineCard in wines dir
 - import winecard to wineindex. make WineCard
+
+day 2
+- make auth parts (login and register), auth, wineshow (DONE)
+- api is diff (DONE), app is diff (DONE)
+- winecard no diff, windinde x no diff
+
+
+-why am i ahving trailing comma issues / single  quote stuff?
