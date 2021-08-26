@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { getToken } from './auth'
 
 const baseUrl = 'https://ga-winebored.herokuapp.com'
 
@@ -20,5 +21,8 @@ export const loginUser = (formData) => {
 }
 
 export const postNewWine = (formData) => {
-  return axios.post(`${baseUrl}/wines`, formData)
+  const requestConfig = {
+    headers: { Authorization: `Bearer ${getToken()}` }
+  }
+  return axios.post(`${baseUrl}/wines`, formData, requestConfig)
 }

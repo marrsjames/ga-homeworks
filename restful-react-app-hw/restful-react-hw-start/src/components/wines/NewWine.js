@@ -9,6 +9,7 @@ const NewWine = () => {
     formData: {
       name: '',
       origin: '',
+      image: '',
       tastingNotes: '',
       grape: '',
       abv: '',
@@ -23,9 +24,7 @@ const NewWine = () => {
     try {
       const res = await postNewWine(state.formData)
       console.log('response from api', res)
-      if (res.status === 200) {
-        history.push('/wines')
-      }
+      history.push(`/wines/${res.data._id}`)
     } catch (err) {
       console.log('error registering user', err)
     }
@@ -118,6 +117,18 @@ const NewWine = () => {
                   placeholder='Price'
                   name='price'
                   value={state.formData.price}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className='field'>
+              <label className='label'>Image URL</label>
+              <div className='control'>
+                <input
+                  className='input'
+                  placeholder='Image URL'
+                  name='image'
+                  value={state.formData.image}
                   onChange={handleChange}
                 />
               </div>
