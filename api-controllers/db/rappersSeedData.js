@@ -6,13 +6,13 @@ export const rappersSeedData = [
     comments: [],
   },
   {
-    mame: 'GZA',
+    name: 'GZA',
     AKA: 'The Genius',
     yearOfBirth: 1966,
     comments: [],
   },
   {
-    mame: 'Ol Dirty Bastard',
+    name: 'Ol Dirty Bastard',
     AKA: 'ODB',
     yearOfBirth: 1968,
     comments: [],
