@@ -1,30 +1,22 @@
 import express from 'express'
 import router from './config/router.js'
+import { port } from './config/environment.js'
+import { connectDb } from './db/helpers.js'
+
 const app = express()
-const port = 3000
+
 app.use(express.json())
+
 app.use('/api', router)
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+async function startServer() {
+  try {
+    await connectDb()
+    console.log('🤖 Mongoose is connected')
+    app.listen(port, () => console.log(`🤖 Listening on Port: ${port}`))
+  } catch (err) {
+    console.log('🤖 Oh no something went wrong', err)
+  }
+}
 
-app.get('/today', function (req, res) {
-  res.send(new Date().toDateString())
-})
-
-const users = []
-
-app.get('/user', function (req, res) {
-  res.json(users)
-})
-
-app.post('/user', function (req, res) {
-  const user = req.body
-  users.push(user)
-  res.send('received, thanks!')
-})
-
-app.listen(port, () => {
-  console.log(`Rapper API listening at http://localhost:${port}`)
-})
+startServer()
