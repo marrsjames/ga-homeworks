@@ -1,5 +1,6 @@
 import express from 'express'
 import coloursCommentsController from '../controllers/coloursCommentsController.js'
+import rappersCommentsController from '../controllers/rappersCommentsController.js'
 import coloursController from '../controllers/coloursController.js'
 import rappersController from '../controllers/rappersController.js'
 
@@ -33,5 +34,14 @@ router
   .route('/colours/:id/comments/:commentId')
   .delete(coloursCommentsController.deleteComment)
   .put(coloursCommentsController.updateComment)
+
+router
+  .route('/rappers/:id/comments')
+  .post(rappersCommentsController.createComment)
+
+router
+  .route('/rappers/:id/comments/:commentId')
+  .delete(rappersCommentsController.deleteComment)
+  .put(rappersCommentsController.updateComment)
 
 export default router
