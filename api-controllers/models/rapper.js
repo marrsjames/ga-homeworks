@@ -14,6 +14,7 @@ const rapperSchema = new mongoose.Schema({
   AKA: String,
   yearOfBirth: Number,
   comments: [commentSchema],
+  colours: [{ type: mongoose.Types.ObjectId, ref: 'Colour' }],
 })
 
 rapperSchema.plugin(mongooseUniqueValidator)

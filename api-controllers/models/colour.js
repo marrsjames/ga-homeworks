@@ -14,6 +14,7 @@ const colourSchema = new mongoose.Schema({
   hexCode: String,
   primary: Boolean,
   comments: [commentSchema],
+  rappers: [{ type: mongoose.Types.ObjectId, ref: 'Rapper' }],
 })
 
 colourSchema.plugin(mongooseUniqueValidator)

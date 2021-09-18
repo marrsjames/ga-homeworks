@@ -44,4 +44,11 @@ router
   .delete(rappersCommentsController.deleteComment)
   .put(rappersCommentsController.updateComment)
 
+router
+  .route('/rappers/:id/colours')
+  .get(rappersController.getAllColoursForRapper)
+router
+  .route('/colours/:id/rappers')
+  .get(coloursController.getAllRappersForColour)
+
 export default router
