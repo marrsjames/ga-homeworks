@@ -46,7 +46,7 @@ async function deleteRapper(req, res, next) {
     if (!rapper) {
       return res.status(404).send({ message: 'Rapper does not exist' })
     }
-    const coloursToRemove = rapper.colours.map((colours) => colour.toString())
+    const coloursToRemove = rapper.colours.map((colour) => colour.toString())
     await Colour.updateMany(
       { _id: coloursToRemove },
       { $pull: { rappers: rapper._id } }

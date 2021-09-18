@@ -3,46 +3,48 @@ import coloursCommentsController from '../controllers/coloursCommentsController.
 import rappersCommentsController from '../controllers/rappersCommentsController.js'
 import coloursController from '../controllers/coloursController.js'
 import rappersController from '../controllers/rappersController.js'
+import userController from '../controllers/userController.js'
+import secureRoute from '../middleware/secureRoute.js'
 
 const router = express.Router()
 
 router
   .route('/colours')
   .get(coloursController.getAllColours)
-  .post(coloursController.createColour)
+  .post(secureRoute, coloursController.createColour)
 router
   .route('/colours/:id')
   .get(coloursController.getColour)
-  .delete(coloursController.deleteColour)
-  .put(coloursController.updateColour)
+  .delete(secureRoute, coloursController.deleteColour)
+  .put(secureRoute, coloursController.updateColour)
 
 router
   .route('/rappers')
   .get(rappersController.getAllRappers)
-  .post(rappersController.createRapper)
+  .post(secureRoute, rappersController.createRapper)
 router
   .route('/rappers/:id')
   .get(rappersController.getRapper)
-  .delete(rappersController.deleteRapper)
-  .put(rappersController.updateRapper)
+  .delete(secureRoute, rappersController.deleteRapper)
+  .put(secureRoute, rappersController.updateRapper)
 
 router
   .route('/colours/:id/comments')
-  .post(coloursCommentsController.createComment)
+  .post(secureRoute, coloursCommentsController.createComment)
 
 router
   .route('/colours/:id/comments/:commentId')
-  .delete(coloursCommentsController.deleteComment)
-  .put(coloursCommentsController.updateComment)
+  .delete(secureRoute, coloursCommentsController.deleteComment)
+  .put(secureRoute, coloursCommentsController.updateComment)
 
 router
   .route('/rappers/:id/comments')
-  .post(rappersCommentsController.createComment)
+  .post(secureRoute, rappersCommentsController.createComment)
 
 router
   .route('/rappers/:id/comments/:commentId')
-  .delete(rappersCommentsController.deleteComment)
-  .put(rappersCommentsController.updateComment)
+  .delete(secureRoute, rappersCommentsController.deleteComment)
+  .put(secureRoute, rappersCommentsController.updateComment)
 
 router
   .route('/rappers/:id/colours')
@@ -50,5 +52,9 @@ router
 router
   .route('/colours/:id/rappers')
   .get(coloursController.getAllRappersForColour)
+
+router.route('/register').post(userController.registerUser)
+
+router.route('/login').post(userController.loginUser)
 
 export default router
