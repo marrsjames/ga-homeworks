@@ -5,8 +5,13 @@ const commentSchema = new mongoose.Schema(
   {
     text: { type: String, required: true, maxLength: 300 },
     rating: { type: Number, required: true, min: 1, max: 10 },
+    createdBy: {
+      type: mongoose.Schema.ObjectId,
+      ref: 'User',
+      required: true,
+    },
   },
-  { timeStamps: true }
+  { timestamps: true }
 )
 
 const rapperSchema = new mongoose.Schema({
@@ -15,6 +20,11 @@ const rapperSchema = new mongoose.Schema({
   yearOfBirth: Number,
   comments: [commentSchema],
   colours: [{ type: mongoose.Types.ObjectId, ref: 'Colour' }],
+  createdBy: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User',
+    required: true,
+  },
 })
 
 rapperSchema.plugin(mongooseUniqueValidator)

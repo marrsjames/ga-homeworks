@@ -9,7 +9,11 @@ async function createComment(req, res, next) {
       return res.status(404).send({ message: 'Rapper does not exist' })
     }
 
-    const newComment = req.body
+    const newComment = {
+      ...req.body,
+      createdBy: req.currentUser,
+    }
+
     rapper.comments.push(newComment)
     const savedRapper = await rapper.save()
 
@@ -33,6 +37,10 @@ async function deleteComment(req, res, next) {
       return res.status(404).send({ message: 'comment does not exist' })
     }
 
+    if (!comment.createdBy.equals(req.currentUser._id)) {
+      return res.status(401).send({ message: 'Unauthorized' })
+    }
+
     comment.remove()
     const savedRapper = await rapper.save()
     return res.status(200).send(savedRapper)
@@ -53,6 +61,10 @@ async function updateComment(req, res, next) {
     const comment = rapper.comments.id(commentId)
     if (!comment) {
       return res.status(404).send({ message: 'comment does not exist' })
+    }
+
+    if (!comment.createdBy.equals(req.currentUser._id)) {
+      return res.status(401).send({ message: 'Unauthorized' })
     }
 
     comment.set(req.body)

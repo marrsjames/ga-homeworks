@@ -13,7 +13,10 @@ async function getAllRappers(_req, res, next) {
 
 async function createRapper(req, res, next) {
   try {
-    const newRapper = await Rapper.create(req.body)
+    const newRapper = await Rapper.create({
+      ...req.body,
+      createdBy: req.currentUser,
+    })
 
     await Colour.updateMany(
       { _id: newRapper.colours },
@@ -46,11 +49,17 @@ async function deleteRapper(req, res, next) {
     if (!rapper) {
       return res.status(404).send({ message: 'Rapper does not exist' })
     }
+
+    if (!rapper.createdBy.equals(req.currentUser._id)) {
+      return res.status(401).send({ message: 'Unauthorized' })
+    }
+
     const coloursToRemove = rapper.colours.map((colour) => colour.toString())
     await Colour.updateMany(
       { _id: coloursToRemove },
       { $pull: { rappers: rapper._id } }
     )
+    await rapper.remove()
 
     return res.status(200).json(rapper)
   } catch (err) {
@@ -66,13 +75,18 @@ async function updateRapper(req, res, next) {
     if (!rapper) {
       return res.status(404).send({ message: 'Rapper does not exist' })
     }
+
+    if (!rapper.createdBy.equals(req.currentUser._id)) {
+      return res.status(401).send({ message: 'Unauthorized' })
+    }
+
     const [removedColours, addedColours] = removedAdded(
       rapper.colours.map((colour) => colour.toString()),
       req.body.colours
     )
 
     rapper.set(req.body)
-    const savedRapper = await rapper.save()
+    const savedRapper = rapper.save()
 
     await Colour.updateMany(
       { _id: removedColours },
