@@ -52,7 +52,7 @@ async function getColour(req, res, next) {
 async function deleteColour(req, res, next) {
   const id = req.params.id
   try {
-    const colour = await Colour.findByIdAndDelete(id)
+    const colour = await Colour.findById(id)
 
     if (!colour) {
       return res.status(404).send({ message: 'Colour does not exist' })
@@ -64,6 +64,8 @@ async function deleteColour(req, res, next) {
       { _id: rappersToRemove },
       { $pull: { colours: colour._id } }
     )
+
+    colour.remove()
     return res.status(200).json(colour)
   } catch (err) {
     next(err)

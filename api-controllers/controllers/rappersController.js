@@ -45,7 +45,7 @@ async function getRapper(req, res, next) {
 async function deleteRapper(req, res, next) {
   const id = req.params.id
   try {
-    const rapper = await Rapper.findByIdAndDelete(id)
+    const rapper = await Rapper.findById(id)
     if (!rapper) {
       return res.status(404).send({ message: 'Rapper does not exist' })
     }
