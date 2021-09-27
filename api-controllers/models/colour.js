@@ -15,7 +15,8 @@ const colourSchema = new mongoose.Schema({
   primary: Boolean,
   comments: [commentSchema],
   rappers: [{ type: mongoose.Types.ObjectId, ref: 'Rapper' }],
-})
+},
+  { timestamps: true })
 
 colourSchema.plugin(mongooseUniqueValidator)
 
