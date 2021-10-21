@@ -31,7 +31,17 @@ async function loginUser(req, res, next) {
   }
 }
 
+async function getAllUsers(_req, res, next) {
+  try {
+    const users = await User.find()
+    return res.status(200).json(users)
+  } catch (err) {
+    next(err)
+  }
+}
+
 export default {
   registerUser,
   loginUser,
+  getAllUsers,
 }

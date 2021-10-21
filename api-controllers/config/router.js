@@ -57,4 +57,7 @@ router.route('/register').post(userController.registerUser)
 
 router.route('/login').post(userController.loginUser)
 
+router.route('/users').get(userController.getAllUsers)
+
+
 export default router
